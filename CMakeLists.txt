@@ -7,9 +7,9 @@ project(maddy)
 
 # ------------------------------------------------------------------------------
 
-set(CMAKE_BINARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/build)
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+#set(CMAKE_BINARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/build)
+#set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+#set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 # ------------------------------------------------------------------------------
 
@@ -28,12 +28,12 @@ set(MADDY_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 # ------------------------------------------------------------------------------
 
 if(NOT DEFINED CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
+  set(CMAKE_CXX_STANDARD 17)
 endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-if(${CMAKE_CXX_STANDARD} LESS 14)
-  message(FATAL_ERROR "maddy requires >=C++14")
+if(${CMAKE_CXX_STANDARD} LESS 17)
+  message(FATAL_ERROR "maddy requires >=C++17")
 endif()
 
 # ------------------------------------------------------------------------------
@@ -59,3 +59,5 @@ if(${MADDY_CREATE_PACKAGE})
     DEPENDS ${MADDY_PACKAGE_FILES})
   add_custom_target(${PROJECT_NAME}_package DEPENDS ${CMAKE_BINARY_DIR}/${PROJECT_NAME}-src.zip)
 endif()
+
+add_subdirectory(src)
