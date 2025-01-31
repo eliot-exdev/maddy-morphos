@@ -1,8 +1,5 @@
 /*
- * © Keysight Technologies 2011-2025
- * Keysight Confidential
- *
- * author: André Geisler <andre.geisler@keysight.com>
+ * author: André Geisler <andre@exdev.de>
  */
 
 #include <memory>
