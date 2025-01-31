@@ -108,3 +108,16 @@ There are different possibilities:
 * Create a pull request with an own branch
 
 Please also read [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## How to cross compile for MorphOS
+
+To set up a cross-compiler for Linux host you can use this script from here: [MorphOs Cross SDK script](https://bigfoot.morphos-team.net/files/setup-cross-sdk.sh)  
+Afterward you should have a MorphOs cross-compiler and the SDK in path /gg installed.   
+You can now cross compile for MorphOs with CMake:  
+
+```shell
+    mkdir build-mos
+    cd build-mos
+    cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/morphos-pcc.toolchain -DCMAKE_BUILD_TYPE=Release ../
+    cmake --build . --target install --paralllel 4
+```
