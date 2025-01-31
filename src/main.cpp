@@ -12,6 +12,10 @@
 
 #include "maddy/parser.h"
 
+#ifdef __MORPHOS__
+unsigned long __stack = (4 * 1024 * 1024);
+#endif
+
 int main(int argc, char **argv) {
     if (argc != 3) {
         std::cout << "usage: " << argv[0] << " <md file> <html file>" << std::endl;
