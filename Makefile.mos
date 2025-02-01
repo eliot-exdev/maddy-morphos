@@ -10,9 +10,9 @@ all: md2html
 
 #--- build md2html ---#
 md2html: src/main.cpp
-	$(CXX) -o ${@} $(^) ${C_FLAGS} ${CXX_FLAGS} ${LD_FLAGS_MOS}
+	$(CXX) -o ${@} $(^) ${C_FLAGS} ${CXX_FLAGS} ${LD_FLAGS}
 
 #--- clean ---#
 .PHONY: clean
 clean:
-	delete ms2html
+	delete md2html
