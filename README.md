@@ -121,3 +121,9 @@ You can now cross compile for MorphOs with CMake:
     cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/morphos-pcc.toolchain -DCMAKE_BUILD_TYPE=Release ../
     cmake --build . --target install --paralllel 4
 ```
+
+## How to compile for MorphOS (native)
+
+```shell
+    make -f Makefile.mos
+```
