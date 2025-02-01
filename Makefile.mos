@@ -1,0 +1,18 @@
+CC=ppc-morphos-gcc-11
+CXX=ppc-morphos-g++-11
+
+C_FLAGS=-Ofast -noixemul -mcpu=G4 -maltivec -mabi=altivec -DNDEBUG -D__MORPHOS__
+CXX_FLAGS=-std=c++17
+
+LD_FLAGS=-Iinclude
+
+all: md2html
+
+#--- build md2html ---#
+md2html: src/main.cpp
+	$(CXX) -o ${@} $(^) ${C_FLAGS} ${CXX_FLAGS} ${LD_FLAGS_MOS}
+
+#--- clean ---#
+.PHONY: clean
+clean:
+	delete ms2html
